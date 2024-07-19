@@ -1,7 +1,5 @@
 ---
 title: "General Social Survey"
-author: "Your Name"
-date: "Year 2020"
 author: "mariahlynn"
 date: "Year 2024"
 output: 
@@ -28,12 +26,18 @@ source("GrabData.R")
 The data in the dataframe GSSdata is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 16 variables. It has further removed unwanted factor levels in much of the data. Examine the code in the GrabData.R file to see what it is doing. Some of the variables are categorical and others are numerical. Be sure to do a variable analysis before tackling each question.  
 First question - Is opinion on the death penalty (CAPPUN) independent of gun ownership (OWNGUN)?
 
+$H_0$: CAPPUN is independent of OWNGUN
+$H_A$: 
 
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-##Results
+CAPPUN is a xxxxxxxx variable,
+OwNGUN is a yyyyyyy variabl, so I
+use the zzzzzz helper file
+
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -41,9 +45,21 @@ First question - Is opinion on the death penalty (CAPPUN) independent of gun own
 
 #### Graphical Descriptive Results
 
+
+```{r}
+barchartGC(~CAPPUN + OWNGUN,data=GSSdata)
+barchartGC(~CAPPUN + OWNGUN,data=GSSdata, type="percent")
+
+```
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+
+This graph shows that......
+
+
 #### Numerical Descriptive Results
+
+
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
