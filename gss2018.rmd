@@ -201,6 +201,14 @@ summary(annova)
 ```
 We can see that the P-value is 0.00000025 which is smaller than 0.05. Therefore, we have to reject the null hypothesis
 
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise-thus 8.7 is the left side margin to hold the names of the factors.
+par(mar = c(7, 8.7, 2, 2)) 
+plot(TurkeyHSD(anova),las=2)
+```
+The family confidence levels 
+There is no difference between high school and junior college. However there s a difference between high school, bachelors, and graduates. 
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
