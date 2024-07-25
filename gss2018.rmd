@@ -29,7 +29,7 @@ First question - Is opinion on the death penalty (CAPPUN) independent of gun own
 
 $H_0$: CAPPUN is independent of OWNGUN
 
-$H_A$: 
+$H_A$: They are dependent 
 
 ## Methods
 
@@ -153,17 +153,23 @@ The P-value 0.000001248 is less than 0.5. Meaning we reject the null hypothesis.
 
 Determine if a persons performance on the wordsum test (WORDSUM) is independent of their level of schooling (DEGREE).
 
-$H_0$: Performance on the wordsum test is independent of their level of schooling 
-$H_A$: Performance on the wordsum test is a depeendent of their level of schooling
+$H_0$: Performance on the wordsum test is independent of their level of schooling  
+
+$H_A$: Performance on the wordsum test is a dependent of their level of schooling  
 
 
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
+WORDSUM is a numerical variable,
+DEGREE is a categorical variable, so I use the num~cat data file. 
+
 ##Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+
 
 ### Descriptive Results
 
@@ -171,16 +177,31 @@ $H_A$: Performance on the wordsum test is a depeendent of their level of schooli
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+boxplot(WORDSUM~DEGREE,data=GSSdata)
+```
+This chart ultimately shows that level of schooling DOES have an affect on the WORDSUM test percentage results 
+
 #### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+favstats(WORDSUM~DEGREE, data=GSSdata) 
+```
+The numerical results show that in 2012 those who did vote had almost 16 years of education. 
 
 ### Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+anova=aov(WORDSUM~DEGREE,data=GSSdata)
+summary(annova)
+```
+We can see that the P-value is 0.00000025 which is smaller than 0.05. Therefore, we have to reject the null hypothesis
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
