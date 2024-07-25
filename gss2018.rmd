@@ -135,6 +135,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+The numerical study shows that those who favor CAPPUN are 75% gun owners. 
 
 ### Inferential Results
 
@@ -151,6 +152,10 @@ The P-value 0.000001248 is less than 0.5. Meaning we reject the null hypothesis.
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
 Determine if a persons performance on the wordsum test (WORDSUM) is independent of their level of schooling (DEGREE).
+
+$H_0$: Performance on the wordsum test is independent of their level of schooling 
+$H_A$: Performance on the wordsum test is a depeendent of their level of schooling
+
 
 ## Methods
 
