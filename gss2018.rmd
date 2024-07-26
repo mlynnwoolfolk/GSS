@@ -206,8 +206,14 @@ We can see that the P-value is 0.00000025 which is smaller than 0.05. Therefore,
 par(mar = c(7, 8.7, 2, 2)) 
 plot(TukeyHSD(anova) ,las=2)
 ```
-The family confidence levels 
-There is no difference between high school and junior college. However there s a difference between high school, bachelors, and graduates. 
+
+There is no difference between high school and less than high school.  
+There is a difference between junior college and high school.   
+There is a difference between bachelor college and high school.    
+There is a difference between graduate and high school.     
+There is no difference between highschool and graduate.     
+There is no difference between junior college and graduate.    
+There is no difference between bachelor and graduate.      
 
 # Discussion and Conclusion
 
