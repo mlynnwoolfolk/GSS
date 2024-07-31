@@ -27,6 +27,8 @@ The data in the dataframe GSSdata is from the 2018 General Social Survey. The fi
 
 First question - Is opinion on the death penalty (CAPPUN) independent of gun ownership (OWNGUN)?
 
+###Introduction      
+
 $H_0$: CAPPUN is independent of OWNGUN
 
 $H_A$: They are dependent 
@@ -35,11 +37,11 @@ $H_A$: They are dependent
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-CAPPUN is a xxxxxxxx variable,
+CAPPUN is a xxxxxxxx variable, (categorical variable)
 OwNGUN is a yyyyyyy variabl, so I
 use the zzzzzz helper file
 
-## Results
+### Results  
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -55,14 +57,11 @@ barchartGC(~CAPPUN + OWNGUN,data=GSSdata)
 barchartGC(~CAPPUN + OWNGUN,data=GSSdata, type="percent")
 
 ```
-This graph shows that among people who own a gun,are more likely to favor capital punishment.
 
-
+This graph shows that half of the people who own guns are in favor of them, while more than half of the people who do not own guns are not in favor of them.   
+  
 
 #### Numerical Descriptive Results
-
-<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
-
 
 ```{r}
 table1<- xtabs(~CAPPUN + OWNGUN,data=GSSdata)
@@ -70,7 +69,11 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-This table shows that 75% of gun owners favor CAPPUN. 
+This table shows that the relationship between gun ownership(OWNGUN) and opinions on capital punishment(CAPPUN), indicate that a higher percentage of gun owners favor capital punishment compared to non-gun owners.
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+
 
 ### Inferential Results
 
@@ -96,6 +99,8 @@ This means we reject/fail to reject the null hypothesis and conclude that opinio
 
 Is there a difference in years of education (EDUC) between the those who did or did not vote in 2012 (VOTE12)?
 
+
+###Introduction     
 $H_0$:There is a difference in years of educations between those who did not vote in 2012.
 
 $H_A$: There is no difference between education if someone voted. 
@@ -109,7 +114,7 @@ EDUC is categorical, VOTE12 is also categorical.
 We want EDUC ~ VOTE12
 The helper file we use is CAT~CAT
 
-##Results
+###Results  
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -153,6 +158,7 @@ The P-value 0.000001248 is less than 0.5. Meaning we reject the null hypothesis.
 
 Determine if a persons performance on the wordsum test (WORDSUM) is independent of their level of schooling (DEGREE).
 
+###Introduction 
 $H_0$: Performance on the wordsum test is independent of their level of schooling  
 
 $H_A$: Performance on the wordsum test is a dependent of their level of schooling  
@@ -180,16 +186,20 @@ DEGREE is a categorical variable, so I use the num~cat data file.
 ```{r}
 boxplot(WORDSUM~DEGREE,data=GSSdata)
 ```
-This chart ultimately shows that level of schooling DOES have an affect on the WORDSUM test percentage results 
+
+The boxplot shows that as the degree level increases from LT High School to Graduate, the median WORDSUM scores also increase. Graduates tend to have higher WORDSUM scores compared to those with lower degrees.  
 
 #### Numerical Descriptive Results
 
-<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ```{r}
 favstats(WORDSUM~DEGREE, data=GSSdata) 
 ```
-The numerical results show that in 2012 those who did vote had almost 16 years of education. 
+
+The numerical result shows that as the level of education increases.The WORDSUM scores tend to increase. Graduates have the highest median and mean WORDSUM scores, followed by those with Bachelor degrees, Junior College degrees, High School degrees, and finally those with less than High School education.
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
 
 ### Inferential Results
 
@@ -220,7 +230,16 @@ There is no difference between bachelor and graduate.
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
 
-###Question 1: is gun ownership independent of opinion on capital punishment.   
+#### Question 1: Is gun ownership independant of opinion on captal punishment. 
 
-This summary result and the inferential results have shown that they are not independent.
- 
+The summary results and the inferential results show that they are not independent.
+
+#### Question 2: Is there a difference in years of education (EDUC) between the those who did or did not vote in 2012 (VOTE12)?
+
+The summary results and the inferential results show that there is a difference of years in people who voted in 2012. 
+
+#### Question 3: Is a persons performance on the wordsum test (WORDSUM) independent of their level of schooling (DEGREE)?
+
+The summary results and the inferential results show that a person's performance on the WORDSUM test (WORDSUM) is not independent of their level of schooling (DEGREE).
+
+
